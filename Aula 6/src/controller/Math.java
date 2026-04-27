@@ -71,4 +71,40 @@ public class Math {
             jLabelResult.setText("Erro na entrada");
         }     
     }
+   public void potencia(){
+        try{
+            double base = Double.parseDouble(jTextFieldChar1.getText().replace(",", "."));
+            int expoente = Integer.parseInt(jTextFieldChar2.getText());
+
+            double result = 1;
+
+            if (expoente >= 0) {
+                for (int i = 0; i < expoente; i++) {
+                    result *= base;
+                }
+            } else {
+                for (int i = 0; i < -expoente; i++) {
+                    result *= base;
+                }
+                result = 1 / result;
+            }
+
+            // FORMATAÇÃO (sem .0 desnecessário)
+            if (result % 1 == 0) {
+                jLabelResult.setText("" + (long) result);
+            } else {
+                String texto = "" + result;
+
+                // remove zeros finais (ex: 2.500000 → 2.5)
+                while (texto.contains(".") && (texto.endsWith("0") || texto.endsWith("."))) {
+                    texto = texto.substring(0, texto.length() - 1);
+                }
+
+                jLabelResult.setText(texto);
+            }
+
+        } catch(NumberFormatException e) {
+            jLabelResult.setText("Erro na entrada");
+        }
+    }
 }

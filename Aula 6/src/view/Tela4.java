@@ -32,6 +32,8 @@ public class Tela4 extends javax.swing.JPanel {
         jTextFieldChar2 = new javax.swing.JTextField();
         jButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 204));
+
         jLabelResult.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelResult.setText("Resultado");
 
