@@ -13,6 +13,7 @@ import view.Tela1;
 import view.Tela2;
 import view.Tela3;
 import view.Tela4;
+import view.Tela5;
 
 /**
  *
@@ -64,6 +65,17 @@ public class Controlador {
         tela4.setSize(resolucao);
         tela4.setLocation(0, 0);
         jDesktopPane.add(tela4);
+        
+    }
+    
+    public void carregarTela5(){
+        jDesktopPane.removeAll();
+        jDesktopPane.updateUI();
+        Dimension resolucao = jDesktopPane.getSize();
+        Tela5 tela5= new Tela5();
+        tela5.setSize(resolucao);
+        tela5.setLocation(0, 0);
+        jDesktopPane.add(tela5);
         
     }
 

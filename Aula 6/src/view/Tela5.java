@@ -15,7 +15,7 @@ public class Tela5 extends javax.swing.JPanel {
      */
     public Tela5() {
         initComponents();
-        inicio()
+        inicio();
     }
 
     /**

@@ -89,13 +89,13 @@ public class Math {
                 result = 1 / result;
             }
 
-            // FORMATAÇÃO (sem .0 desnecessário)
+            // formatar pra ficar sem o decimal
             if (result % 1 == 0) {
-                jLabelResult.setText("" + (long) result);
+                jLabelResult.setText("" + (int) result);
             } else {
                 String texto = "" + result;
 
-                // remove zeros finais (ex: 2.500000 → 2.5)
+                //pra remover os 0ros depois de um digito decimal
                 while (texto.contains(".") && (texto.endsWith("0") || texto.endsWith("."))) {
                     texto = texto.substring(0, texto.length() - 1);
                 }
