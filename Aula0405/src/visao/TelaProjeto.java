@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package visao;
-import controlador.ControladorSalvar;
+import controlador.ControladorCadeira;
 
 
 /**
@@ -17,7 +17,8 @@ public class TelaProjeto extends javax.swing.JPanel {
      */
     public TelaProjeto() {
         initComponents();
-        c.inicio();  
+        inicio();
+        
     }
 
     /**
@@ -39,7 +40,7 @@ public class TelaProjeto extends javax.swing.JPanel {
         jTextFieldCPF = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jTextFieldTelefone = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jButtonSalvar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
@@ -55,10 +56,10 @@ public class TelaProjeto extends javax.swing.JPanel {
 
         jLabel5.setText("Telefone:");
 
-        jButton1.setText("Salvar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSalvar.setText("Salvar");
+        jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonSalvarActionPerformed(evt);
             }
         });
 
@@ -80,7 +81,7 @@ public class TelaProjeto extends javax.swing.JPanel {
                     .addComponent(jTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButtonSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextFieldCPF, jTextFieldID, jTextFieldNome, jTextFieldTelefone});
@@ -105,7 +106,7 @@ public class TelaProjeto extends javax.swing.JPanel {
                     .addComponent(jLabel5)
                     .addComponent(jTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -155,13 +156,13 @@ public class TelaProjeto extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
+        c.Salvar;
+    }//GEN-LAST:event_jButtonSalvarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -176,14 +177,7 @@ public class TelaProjeto extends javax.swing.JPanel {
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldTelefone;
     // End of variables declaration//GEN-END:variables
-     ControladorSalvar c;
     public void inicio(){
-        c = new ControladorSalvar();
-        c.jButton1 = jButton1;
-        c.jTextFieldID = jTextFieldID;
-        c.jTextFieldCPF = jTextFieldCPF;
-        c.jTextFieldNome = jTextFieldNome;
-        c.jTextFieldTelefone = jTextFieldTelefone;
-        c.jList1 = jList1;
-    } 
+        c = new ControladorCadeira(jTextFieldID, jTextFieldNome, jTextFieldCPF, jTextFieldTelefone, jList1);
+    }
 }
