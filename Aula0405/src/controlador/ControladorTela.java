@@ -4,45 +4,39 @@
  */
 package controlador;
 
-import java.awt.Dimension;
 import javax.swing.JDesktopPane;
+import java.awt.Dimension;
 import visao.TelaColorida;
 import visao.TelaProjeto;
-
 /**
  *
- * @author victorperes
+ * @author behof
  */
 public class ControladorTela {
-
+    
     JDesktopPane jDesktop;
     
-     public void abrirTelaProjeto() {
+    public ControladorTela(JDesktopPane jDesktop){
+        this.jDesktop = jDesktop;
+    }
+    
+    public void abrirTelaProjeto(){
         jDesktop.removeAll();
         jDesktop.updateUI();
-        Dimension resolucao = jDesktop.getSize(); //captura resolução do container
+        Dimension resolution = jDesktop.getSize();
         TelaProjeto tela1 = new TelaProjeto();
-        tela1.setSize(resolucao);
+        tela1.setSize(resolution);
         tela1.setLocation(0, 0);
         jDesktop.add(tela1);
         tela1.setVisible(true);
     }
     
-    
-    
-
-    public ControladorTela(JDesktopPane jDesktop) {
-        this.jDesktop = jDesktop;
-    }
-
-   
-
-    public void abrirTelaColorida() {
+    public void abrirTelaColorida(){
         jDesktop.removeAll();
         jDesktop.updateUI();
-        Dimension resolucao = jDesktop.getSize(); //captura resolução do container
+        Dimension resolution = jDesktop.getSize();
         TelaColorida tela1 = new TelaColorida();
-        tela1.setSize(resolucao);
+        tela1.setSize(resolution);
         tela1.setLocation(0, 0);
         jDesktop.add(tela1);
         tela1.setVisible(true);
